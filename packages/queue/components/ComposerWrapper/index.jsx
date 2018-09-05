@@ -1,6 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bufferPublishComposer as Composer } from '@bufferapp/composer';
+import Composer from '@bufferapp/composer';
+
+import '@bufferapp/composer/dist/composer-web-iframe-bundle.css';
+
+console.log({Composer});
 
 const ComposerWrapper = props => (
   <div>
