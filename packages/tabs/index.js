@@ -1,5 +1,5 @@
 import { push } from 'react-router-redux';
-import { generateProfilePageRoute } from '@bufferapp/publish-routes';
+import { generateProfilePageRoute, generateChildTabRoute } from '@bufferapp/publish-routes';
 import { connect } from 'react-redux';
 import { actions as modalsActions } from '@bufferapp/publish-modals';
 
@@ -19,6 +19,11 @@ export default connect(
       profileId: ownProps.profileId,
     }))),
     showUpgradeModal: () => dispatch(modalsActions.showUpgradeModal()),
+    onChildTabClick: childTabId => dispatch(push(generateChildTabRoute({
+          tabId: ownProps.tabId,
+          childTabId,
+          profileId: ownProps.profileId,
+    }))),
   }),
 )(TabNavigation);
 
