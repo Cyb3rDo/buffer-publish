@@ -5,7 +5,7 @@ import { Redirect } from 'react-router';
 
 import QueuedPosts from '@bufferapp/publish-queue';
 import SentPosts from '@bufferapp/publish-sent';
-import ProfileSettings from '@bufferapp/publish-settings';
+import ProfileSettings from '../../../settings/post-schedule/index';
 import TabNavigation from '@bufferapp/publish-tabs';
 import ProfileSidebar from '@bufferapp/publish-profile-sidebar';
 import { ScrollableContainer } from '@bufferapp/publish-shared-components';

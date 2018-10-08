@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { actions as profileSidebarActions } from '@bufferapp/publish-profile-sidebar';
+import { actions as profileSidebarActions } from '../../profile-sidebar/index';
 import { actions } from './reducer';
 
-import ProfileSettings from './components/ProfileSettings';
+import ProfileSettings from './components/ProfileSettings/index';
 
 export default connect(
   state => ({

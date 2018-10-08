@@ -15,12 +15,12 @@ import {
   ScheduleTable,
   EmptyState,
   SensitiveData,
-} from '@bufferapp/publish-shared-components';
+} from '../../../../shared-components/index';
 
-import PostingTimeForm from '../PostingTimeForm';
-import TimezoneInputForm from '../TimezoneInputForm';
+import PostingTimeForm from '../PostingTimeForm/index';
+import TimezoneInputForm from '../TimezoneInputForm/index';
 import debounce from '../../utils/debounce';
-import ConfirmClear from '../ConfirmClear';
+import ConfirmClear from '../ConfirmClear/index';
 
 const headerStyle = {
   marginBottom: '0.5rem',

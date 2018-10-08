@@ -7,7 +7,7 @@ import Settings, {
   actionTypes,
   middleware,
 } from './index';
-import ProfileSettings from './components/ProfileSettings';
+import ProfileSettings from './components/ProfileSettings/index';
 import {
   settingsHeader,
   days,

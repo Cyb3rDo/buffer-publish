@@ -2,7 +2,7 @@
   "name": "@bufferapp/publish-settings",
   "version": "1.9.24",
   "description": "Settings package",
-  "main": "index.js",
+  "main": "post-schedule/index.js",
   "scripts": {
     "lint": "eslint . --ignore-pattern coverage node_modules"
   },
