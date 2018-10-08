@@ -9,7 +9,7 @@ import ProfilePage from './components/ProfilePage';
 // default export = container
 export default hot(module)(connect(
   (state, ownProps) => {
-    const { tabId, profileId } =
+    const { tabId, profileId, childTabId } =
       getProfilePageParams({ path: ownProps.history.location.pathname }) || {};
     if (state[tabId] && state[tabId].byProfileId && state[tabId].byProfileId[profileId]) {
       return ({

@@ -1,4 +1,4 @@
-const profileRouteRegex = /profile\/(\w+)\/tab\/(\w+)/;
+const profileRouteRegex = /profile\/(\w+)\/tab\/(\w+)(?:\/(\w+))?/;
 export const getProfilePageParams = ({ path }) => {
   const match = profileRouteRegex.exec(path);
   if (!match) {
@@ -7,6 +7,7 @@ export const getProfilePageParams = ({ path }) => {
   return {
     profileId: match[1],
     tabId: match[2],
+    childTabId: match[3],
   };
 };
 
