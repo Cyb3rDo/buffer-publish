@@ -85,6 +85,7 @@ const timezoneAndPauseContainerStyle = {
 
 /* eslint no-console: 0 */
 const ProfileSettings = ({
+  childTabId,
   days,
   items,
   loading,

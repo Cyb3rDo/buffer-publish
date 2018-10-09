@@ -17,10 +17,11 @@ export const generateProfilePageRoute = ({ profileId, tabId = 'queue'}) =>
 export const profilePageRoute = generateProfilePageRoute({
   profileId: ':profileId',
   tabId: ':tabId',
+  childTabId: ':childTabId',
 });
 
 export const generateChildTabRoute = ({ profileId, tabId = 'queue', childTabId = 'general'}) =>
-    `profile/${profileId}/tab/${tabId}/${childTabId}`;
+    `/profile/${profileId}/tab/${tabId}/${childTabId}`;
 
 export const childTabRoute = generateChildTabRoute({
     profileId: ':profileId',
