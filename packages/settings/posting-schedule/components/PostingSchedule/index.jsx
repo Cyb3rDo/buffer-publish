@@ -84,7 +84,7 @@ const timezoneAndPauseContainerStyle = {
 }
 
 /* eslint no-console: 0 */
-const ProfileSettings = ({
+const PostingSchedule = ({
   childTabId,
   days,
   items,
@@ -274,7 +274,7 @@ const ProfileSettings = ({
   );
 };
 
-ProfileSettings.propTypes = {
+PostingSchedule.propTypes = {
   days: PropTypes.arrayOf(
     PropTypes.shape({
       dayName: PropTypes.string,
@@ -321,8 +321,8 @@ ProfileSettings.propTypes = {
   profileService: PropTypes.string.isRequired,
 };
 
-ProfileSettings.defaultProps = {
+PostingSchedule.defaultProps = {
   loading: false,
 };
 
-export default ProfileSettings;
+export default PostingSchedule;

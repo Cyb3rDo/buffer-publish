@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { actions as profileSidebarActions } from '../../profile-sidebar/index';
 import { actions } from './reducer';
 
-import ProfileSettings from './components/ProfileSettings/index';
+import PostingSchedule from './components/PostingSchedule/index';
 
 export default connect(
   state => ({
@@ -103,7 +103,7 @@ export default connect(
       dispatch(actions.handleClosePopover());
     },
   }),
-)(ProfileSettings);
+)(PostingSchedule);
 
 // export reducer, actions and action types
 export reducer, { actions, actionTypes } from './reducer';

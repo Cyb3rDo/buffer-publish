@@ -7,12 +7,12 @@ import Settings, {
   actionTypes,
   middleware,
 } from './index';
-import ProfileSettings from './components/ProfileSettings/index';
+import ProfileSettings from './components/PostingSchedule/index';
 import {
   settingsHeader,
   days,
   timezones,
-} from './components/ProfileSettings/settingsData';
+} from './components/PostingSchedule/settingsData';
 
 const storeFake = state => ({
   default: () => {},
