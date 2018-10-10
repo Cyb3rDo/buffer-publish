@@ -71,6 +71,8 @@ TabNavigation.propTypes = {
   onTabClick: PropTypes.func.isRequired,
   shouldShowUpgradeCta: PropTypes.bool.isRequired,
   showUpgradeModal: PropTypes.func.isRequired,
+  onChildTabClick: PropTypes.func.isRequired,
+  selectedChildTabId: PropTypes.string
 };
 
 export default TabNavigation;

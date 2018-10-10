@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { profilePageRoute, preferencePageRoute } from '@bufferapp/publish-routes';
+import { profilePageRoute, preferencePageRoute, childTabRoute } from '@bufferapp/publish-routes';
 import { Route, Switch } from 'react-router';
 
 import { DragDropContext } from 'react-dnd';
@@ -39,6 +39,10 @@ class App extends Component { // eslint-disable-line
                 path={preferencePageRoute}
                 component={Preferences}
               />
+             <Route
+                path={childTabRoute}
+                component={ProfilePage}
+             />
               <Route
                 path={profilePageRoute}
                 component={ProfilePage}

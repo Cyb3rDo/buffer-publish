@@ -10,6 +10,7 @@ import TabNavigation from './components/TabNavigation';
 export default connect(
   (state, ownProps) => ({
     selectedTabId: ownProps.tabId,
+    selectedChildTabId: ownProps.childTabId,
     shouldShowUpgradeCta: state.appSidebar.user.is_free_user,
     shouldShowNestedSettingsTab: ownProps.tabId === "settings",
   }),
