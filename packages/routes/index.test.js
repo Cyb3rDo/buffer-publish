@@ -1,8 +1,10 @@
 import {
   getProfilePageParams,
   generateProfilePageRoute,
+  generateChildTabRoute,
   preferencePageRoute,
   profilePageRoute,
+  childTabRoute,
   generatePreferencePageRoute,
   getPreferencePageParams,
  } from './index';
@@ -12,11 +14,13 @@ describe('publish-routes', () => {
     it('should get params from path', () => {
       const profileId = '1234adf';
       const tabId = 'tabid123';
-      const path = `/profile/${profileId}/tab/${tabId}`;
+      const childTabId = 'childTab123';
+      const path = `/profile/${profileId}/tab/${tabId}/${childTabId}`;
       expect(getProfilePageParams({ path }))
         .toEqual({
           profileId,
           tabId,
+          childTabId,
         });
     });
 
@@ -39,11 +43,32 @@ describe('publish-routes', () => {
     });
   });
 
+  describe('generateChildTabRoute', () => {
+      it('should generate profile route', () => {
+          const profileId = '1234adf';
+          const tabId = 'tabid123';
+          const childTabId = 'childTab123';
+          expect(generateChildTabRoute({
+              profileId,
+              tabId,
+              childTabId,
+          }))
+              .toBe(`/profile/${profileId}/tab/${tabId}/${childTabId}`);
+      });
+  });
+
   describe('profilePageRoute', () => {
     it('should return profile page route template', () => {
       expect(profilePageRoute)
         .toBe('/profile/:profileId/tab/:tabId');
     });
+  });
+
+  describe('childTabRoute', () => {
+      it('should return child tab page route template', () => {
+          expect(childTabRoute)
+              .toBe('/profile/:profileId/tab/:tabId/:childTabId');
+      });
   });
 
   describe('preferencePageRoute', () => {
