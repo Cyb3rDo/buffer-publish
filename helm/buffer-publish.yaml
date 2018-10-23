@@ -1,5 +1,6 @@
 name: buffer-publish # Override to be the name of the application
 track: stable # stable | canary
+namespace: buffer
 replicaCount: 5
 deploymentUrl: "publish.buffer.com"
 chart: "buffercharts/buffer-service"
