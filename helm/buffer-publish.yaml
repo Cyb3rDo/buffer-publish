@@ -1,6 +1,14 @@
 name: buffer-publish # Override to be the name of the application
 track: stable # stable | canary
 replicaCount: 5
+deploymentUrl: "publish.buffer.com"
+chart: "buffercharts/buffer-service"
+chartVersion: "1.0.1"
+cdEnabled: true
+cdBranchEnabled: true
+dockerfile: Dockerfile
+channel: eng-proj-kuberdash
+clusterName: "kubeeast"
 image:
   repository: bufferapp/buffer-publish # Override with the docker image
   tag: latest # this will be overriden by the build process
@@ -87,8 +95,4 @@ service:
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
     service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-east-1:980620087509:certificate/6b704a93-67de-444c-89fc-9f659bf2dd42
 ingress:
-  enabled: true
-  path: /
-  annotations:
-    kubernetes.io/ingress.class: nginx
-  serviceDevUrl: "publish.dev.buffer.com"
+  enabled: false
