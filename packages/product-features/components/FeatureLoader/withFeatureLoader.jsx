@@ -5,6 +5,7 @@ import { isSupportedFeature, isSupportedPlan } from '../../utils';
 const WithFeatureLoader = (WrappedComponent) => {
   const FeatureLoader = ({
                            productFeatures,
+                           isFreeUser,
                            ...other
                          }) => {
     const {
@@ -30,10 +31,12 @@ const WithFeatureLoader = (WrappedComponent) => {
       planName: PropTypes.string,
       features: PropTypes.any,
     }),
+    isFreeUser: PropTypes.bool,
   };
 
   FeatureLoader.defaultProps = {
     productFeatures: {},
+    isFreeUser: false,
   };
 
   return FeatureLoader;

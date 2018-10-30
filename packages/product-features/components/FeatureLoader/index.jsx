@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isSupportedPlan, isSupportedFeature } from '../../utils';
+import { isSupportedPlan, isSupportedFeature, isProAndUpPlan } from '../../utils';
 
 const FeatureLoader = ({
                          productFeatures,
+                         isFreeUser,
                          supportedFeatures,
                          children,
                          fallback,
                          supportedPlans,
+                         supportsProAndUp,
                        }) => {
   const {
     planName,
@@ -19,6 +21,10 @@ const FeatureLoader = ({
   }
 
   if (!isSupportedFeature(supportedFeatures, features)) {
+    return fallback || null;
+  }
+
+  if (!isProAndUpPlan(supportsProAndUp, isFreeUser)) {
     return fallback || null;
   }
 
@@ -43,6 +49,7 @@ FeatureLoader.propTypes = {
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]),
+  supportsProAndUp: PropTypes.bool,
 };
 
 FeatureLoader.defaultProps = {};

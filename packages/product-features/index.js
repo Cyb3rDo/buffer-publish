@@ -7,6 +7,7 @@ import withFeatureLoader from './components/FeatureLoader/withFeatureLoader';
 
 const productFeatures = state => ({
   productFeatures: state.productFeatures,
+  isFreeUser: state.appSidebar.user.is_free_user,
 });
 
 export default connect(productFeatures)(FeatureLoader);

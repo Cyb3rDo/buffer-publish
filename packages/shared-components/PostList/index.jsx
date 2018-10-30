@@ -70,6 +70,7 @@ const renderPost = ({
     isSent,
   };
   let PostComponent = postTypeComponentMap.get(post.type);
+
   PostComponent = PostComponent || TextPost;
 
   return <PostComponent {...postWithEventHandlers} />;
@@ -122,7 +123,7 @@ const PostList = ({
             })
           }
           <FeatureLoader
-            supportedFeatures={'share_again'}
+            supportsProAndUp
           >
             <div style={reBufferWrapperStyle}>
               <Button

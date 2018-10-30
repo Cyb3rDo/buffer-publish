@@ -23,3 +23,7 @@ export function isSupportedFeature (supportedFeatures, features) {
   }
   return true;
 }
+
+export function isProAndUpPlan (supportsProAndUp, isFreeUser) {
+  return supportsProAndUp && !isFreeUser;
+}
