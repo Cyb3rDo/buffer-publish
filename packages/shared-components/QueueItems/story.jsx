@@ -22,7 +22,12 @@ const store = storeFake({
   productFeatures: {
     planName: 'free',
     features: {},
-  }
+  },
+  appSidebar: {
+    user: {
+      is_free_user: true,
+    },
+  },
 });
 
 storiesOf('QueueItems', module)

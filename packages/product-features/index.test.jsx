@@ -24,6 +24,11 @@ describe('ProductFeatureComponent', () => {
           not_here: false,
         },
       },
+      appSidebar: {
+        user: {
+          is_free_user: true,
+        },
+      },
       planName: 'free',
     });
     const wrapper = mount(
