@@ -26,6 +26,7 @@ const Tab = ({
         display: 'inline-block',
         minWidth: '60px',
         textAlign: 'center',
+        padding: '0 40px',
       },
       selected: {
         borderBottom: `2px solid ${curiousBlue}`,
