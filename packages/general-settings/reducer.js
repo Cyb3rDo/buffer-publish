@@ -70,10 +70,8 @@ export const actions = {
     type: actionTypes.SHOW_GA_CUSTOMIZATION_FORM,
   }),
   handleOnSelectLinkShortenerChange: ({ profileId, domain }) => ({
-    handleShowGACustomizationFormClick: () => ({
-      type: actionTypes.CHANGE_SELECTED_LINK_SHORTENER, type: actionTypes.SHOW_GA_CUSTOMIZATION_FORM,
-      profileId,
-    }),
+    type: actionTypes.CHANGE_SELECTED_LINK_SHORTENER,
+    profileId,
     domain,
   }),
   handleGoogleAnalyticsToggle: () => ({
