@@ -130,11 +130,16 @@ const QueuedPosts = ({
         />
       }
       {showComposer && editMode &&
-        <ComposerPopover 
+        <ComposerPopover
           onSave={onComposerCreateSuccess}
           type={'queue'}
         />
       }
+      <iframe
+        src="https://local.buffer.com/app/profile/5bbcb6cc6586f300114ade62/buffer/queue/calendar/week?calendar_only=true"
+        width="780px"
+        height="600px"
+      />
       <QueueItems
         items={postLists}
         subprofiles={subprofiles}
