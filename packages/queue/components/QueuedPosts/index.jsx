@@ -40,6 +40,15 @@ const buttonStyle = {
   minWidth: '150px',
 };
 
+function getConnectSocialAccountURL() {
+  return window.location.hostname === 'publish.local.buffer.com' ? 'https://local.buffer.com' : 'https://buffer.com';
+}
+
+function openCalendarPopup(selectedProfileId) {
+  const calendarUrl = `${getConnectSocialAccountURL()}/app/profile/${selectedProfileId}/buffer/queue/calendar/week?calendar_only=true`;
+  window.open(calendarUrl, 'CalendarView', 'width=800,height=800,scrollbars=1');
+}
+
 const QueuedPosts = ({
   total,
   loading,
@@ -69,6 +78,7 @@ const QueuedPosts = ({
   isInstagramProfile,
   directPostingEnabled,
   onSetUpDirectPostingClick,
+  selectedProfileId,
 }) => {
   if (loading) {
     return (
@@ -135,10 +145,15 @@ const QueuedPosts = ({
           type={'queue'}
         />
       }
+      {
+        <button onClick={() => openCalendarPopup(selectedProfileId)}>Calendar!</button>
+      }
       <iframe
-        src="https://local.buffer.com/app/profile/5bbcb6cc6586f300114ade62/buffer/queue/calendar/week?calendar_only=true"
-        width="780px"
-        height="600px"
+        id="calendar-only-iframe"
+        src={`${getConnectSocialAccountURL()}/app/profile/${selectedProfileId}/buffer/queue/calendar/week?calendar_only=true`}
+        width="785px"
+        height="1150px"
+        frameBorder="0"
       />
       <QueueItems
         items={postLists}

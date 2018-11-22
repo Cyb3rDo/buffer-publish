@@ -43,6 +43,7 @@ export default connect(
         subprofiles: state.profileSidebar && selectedProfile ? selectedProfile.subprofiles : [],
         isInstagramProfile: state.profileSidebar && selectedProfile && selectedProfile.type === "instagram",
         directPostingEnabled: state.profileSidebar && selectedProfile && selectedProfile.directPostingEnabled,
+        selectedProfileId: state.profileSidebar.selectedProfileId,
       };
     }
     return {};
