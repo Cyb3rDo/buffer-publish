@@ -1,6 +1,7 @@
 const fs = require('fs');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const common = require('./webpack.config.common.js');
 
@@ -24,6 +25,7 @@ const merged = merge.strategy({ plugins: 'prepend' })(
       },
     },
     plugins: [
+      new DashboardPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
       // new BundleAnalyzerPlugin(),
