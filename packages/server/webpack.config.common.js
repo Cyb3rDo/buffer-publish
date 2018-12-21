@@ -98,7 +98,7 @@ module.exports = {
             // or node_modules/packageName
             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
 
-            if (packageName.indexOf('@bufferapp')) {
+            if (packageName.indexOf('@bufferapp') >= 0) {
               return 'bufferapp';
             }
 
