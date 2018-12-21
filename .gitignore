@@ -14,4 +14,6 @@ bundle.js
 bundle.css
 vendor*.js
 vendor.css
+bufferapp*.js
+bufferapp.css
 *.map

@@ -12,6 +12,12 @@
     "transform-object-rest-spread",
     "transform-class-properties",
     "transform-function-bind",
-    "transform-async-generator-functions"
+    "transform-async-generator-functions",
+    ["transform-imports", {
+      "react-router": {
+        "transform": "react-router/${member}",
+        "preventFullImport": true
+      }
+    }]
   ]
 }
