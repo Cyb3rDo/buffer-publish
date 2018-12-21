@@ -41,7 +41,7 @@ let staticAssets = {
   'bundle.css': 'https://local.buffer.com:8080/static/bundle.css',
   'vendor.js': 'https://local.buffer.com:8080/static/vendor.js',
   'bufferapp.js': 'https://local.buffer.com:8080/static/bufferapp.js',
-  'runtime.js': 'https://local.buffer.com:8080/static/runtime.js',
+  'bufferapp.css': 'https://local.buffer.com:8080/static/bufferapp.css',
 };
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -125,11 +125,11 @@ window['_fs_namespace'] = 'FS';
 const getHtml = ({ notification, userId, modalKey }) =>
   fs
     .readFileSync(join(__dirname, 'index.html'), 'utf8')
-    .replace('{{{runtime}}}', staticAssets['runtime.js'])
     .replace('{{{bufferapp}}}', staticAssets['bufferapp.js'])
     .replace('{{{vendor}}}', staticAssets['vendor.js'])
     .replace('{{{bundle}}}', staticAssets['bundle.js'])
     .replace('{{{bundle-css}}}', staticAssets['bundle.css'])
+    .replace('{{{bufferapp-css}}}', staticAssets['bufferapp.css'])
     .replace('{{{stripeScript}}}', stripeScript)
     .replace('{{{fullStoryScript}}}', fullStoryScript)
     .replace('{{{bugsnagScript}}}', isProduction ? getBugsnagScript(userId) : '')
