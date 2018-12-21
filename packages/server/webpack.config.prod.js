@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const common = require('./webpack.config.common.js');
 
 const merged = merge(common, {
@@ -23,6 +23,7 @@ const merged = merge(common, {
       filename: '[name].[hash].css.map',
       test: ['bundle.css'],
     }),
+    new BundleAnalyzerPlugin(),
   ],
 });
 

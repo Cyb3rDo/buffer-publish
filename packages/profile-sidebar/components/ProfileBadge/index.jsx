@@ -40,8 +40,6 @@ const profileBadgeIconStyle = {
   boxShadow: 'inset 0 0 16px 16px #fff',
 };
 
-const badgeTypes = PropTypes.oneOf(SERVICE_NAMES);
-
 const profileBadgeIconMap = new Map([
   [SERVICE_TWITTER, { component: CircleTwitterIcon, color: 'twitter' }],
   [SERVICE_FACEBOOK, { component: CircleFacebookIcon, color: 'facebook' }],
@@ -61,7 +59,7 @@ const ProfileBadgeIcon = ({ type }) => {
 };
 
 ProfileBadgeIcon.propTypes = {
-  type: badgeTypes.isRequired,
+  type: PropTypes.oneOf(SERVICE_NAMES).isRequired,
 };
 
 const ProfileBadge = ({ avatarUrl, type }) => (
@@ -75,7 +73,7 @@ const ProfileBadge = ({ avatarUrl, type }) => (
 
 ProfileBadge.propTypes = {
   avatarUrl: PropTypes.string.isRequired,
-  type: badgeTypes.isRequired,
+  type: PropTypes.oneOf(SERVICE_NAMES).isRequired,
 };
 
 export default ProfileBadge;
